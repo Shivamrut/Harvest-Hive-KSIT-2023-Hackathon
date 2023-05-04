@@ -81,7 +81,7 @@ farmerrouter.post('/', async (req, res) => {
     try {
       const [result] = await db.execute('INSERT INTO farmers (name, email, password) VALUES (?, ?, ?)', [name, email, password]);
       const newFarmerId = result.insertId;
-      res.status(201).json({ id: newFarmerId, name, email });
+      res.status(201).json({ farmer_id: newFarmerId, name, email });
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal server error');
@@ -110,7 +110,7 @@ farmerrouter.post('/', async (req, res) => {
     const farmerId = req.params.id;
     const { name, email, password } = req.body;
     try {
-      const [result] = await db.execute('UPDATE farmers SET name = ?, email = ?, password = ? WHERE id = ?', [name, email, password, farmerId]);
+      const [result] = await db.execute('UPDATE farmers SET name = ?, email = ?, password = ? WHERE farmer_id = ?', [name, email, password, farmerId]);
       if (result.affectedRows === 0) {
         res.status(404).send(`Farmer with id ${farmerId} not found`);
       } else {
@@ -126,9 +126,9 @@ farmerrouter.post('/', async (req, res) => {
   farmerrouter.delete('/:id', async (req, res) => {
     const farmerId = req.params.id;
     try {
-      const [result] = await db.execute('DELETE FROM farmers WHERE id = ?', [farmerId]);
+      const [result] = await db.execute('DELETE FROM farmers WHERE farmer_id = ?', [farmerId]);
       if (result.affectedRows === 0) {
-        res.status(404).send(`Farmer with id ${farmerId} not found`);
+        res.status(404).send(`Farmer with farmer_id ${farmerId} not found`);
       } else {
         res.sendStatus(204);
       }
