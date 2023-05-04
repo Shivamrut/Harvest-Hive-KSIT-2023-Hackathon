@@ -80,3 +80,32 @@
 .hh-opacity, .w3-hover-opacity:hover {
     opacity: 0.60;
 }
+#HHlogo
+{
+    border-radius: 20%;
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+}
+
+/* .card
+{
+    padding-bottom: 30px; 
+    padding: 10%;
+} */
+
+.container {
+    padding: 20px;
+  }
+  
+.card {
+margin-bottom: 30px;
+padding: 5%;
+}
+
+@media (max-width: 767px) {
+.container {
+    padding: 10px;
+}
+}
+  
