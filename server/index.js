@@ -22,6 +22,11 @@ app.use('/coustomer', coustomerrouter);
 const farmerrouter = require('./routes/farmer.js');
 app.use('/farmer', farmerrouter);
 
+const ordersrouter = require('./routes/orders.js');
+app.use('/orders', ordersrouter);
+
+const cropsrouter = require('./routes/crops.js');
+app.use('/crops', cropsrouter);
 
 const server = http.createServer(app);
 async function main(){
