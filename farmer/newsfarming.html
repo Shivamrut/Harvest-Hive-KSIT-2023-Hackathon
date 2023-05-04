@@ -7,6 +7,18 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/homePg.js"> </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-kbrWcza5xnpD+Nva5mcBdj5LP2wE8n7zURbnsaU6NLduyMv9K6eCvyx1uhg6iEIMKjJUAlrI51p54rDjKkw8Tg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/imgStyles.css">
 	<style>
 		.jumbotron {
 			background-image: url('https://images.unsplash.com/photo-1534258936927-8fe9e7c5a5e5');
@@ -63,23 +75,60 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-			<img src="https://res.cloudinary.com/dulsp1f7p/image/upload/v1683190684/Untitled_fogwlk.jpg" width="80px" height="80px" class="img">
-			<a class="navbar-brand" href="#">Advancements in Farming Technologies</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Harvest Hive</a>
+			<button
+			  class="navbar-toggler"
+			  type="button"
+			  data-toggle="collapse"
+			  data-target="#navbarNav"
+			  aria-controls="navbarNav"
+			  aria-expanded="false"
+			  aria-label="Toggle navigation"
+			>
+			  <span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="shop.html">Shop</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="contact.html">Contact Us</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="details.html">Give Info</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="priceTrend.html">Trends</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="newsfarming.html">News</a>
+				</li>
+			  </ul>
+			  <ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+				  <a class="nav-link" href="login.html">Login</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="signup.html">Signup</a>
+				</li>
+			  </ul>
 			</div>
-		</nav>
-		<div class="jumbotron">
-			<h1 class="text">Advancements in Farming Technologies</h1>
-			<p class="words">You'll find the latest news and information about the latest farming technologies here.</p>
-		</div>
+		  </nav>
+		
 	</header>
 	<main>
-		<div class="container">
+
+		<div class="container" >
+			<div style="color: green; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: center" >
+				<h1 >Advancements in Farming Technologies</h1>
+				<p >You'll find the latest news and information about the latest farming technologies here.</p>
+			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="news-card">
@@ -118,11 +167,16 @@
             </div>
         </div>
     </main>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>Copyright © 2023
-            <a href="#">Advancements in Farming Technologies</a>
-        </p>
-    </footer>
+    <div id="indexFooter">
+		<hr>
+		<p class=" hh-small hh-opacity hh-center"> Harvest Hive is a global phenomena in the domain of agriculture. We
+		  provide world class service for the farmers to sell their product and for consumers the best picked products from
+		  certified agriculturists.
+		<div>
+		  <img src="logo/full.jpg" alt="logo here" id="HHlogo">
+		</div>
+		</p>
+	  </div>
 </body>
 </html>
     
