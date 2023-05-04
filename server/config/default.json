@@ -1,0 +1,18 @@
+{
+    "app": {
+        "port": 3000,
+        "hostname":"localhost"
+    },
+    "db": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database":"harvest1",
+        "timezone":"+00:00",
+        "charset": "utf8mb4_general_ci"
+    },
+    "login": {
+        "jwtSecret": "3rest3r3s3cr3t0"
+      }
+
+}
