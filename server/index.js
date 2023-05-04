@@ -1,7 +1,7 @@
 const http = require('http');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const mysql = require("mysql2/promise");
-const cors = require("cors");
+// const cors = require("cors");
 const express = require("express");
 // const consumerrouter = require('./routes/consumer');
 
@@ -12,14 +12,14 @@ const hostname = config.get('app.hostname');
 const port = config.get('app.port');
 
 const app = express();
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
-const consumerrouter = require('./routes/consumer');
-app.use('/consumer', consumerrouter);
+const coustomerrouter = require('./routes/coustomer.js');
+app.use('/coustomer', coustomerrouter);
 
-const farmerrouter = require('./routes/farmer');
+const farmerrouter = require('./routes/farmer.js');
 app.use('/farmer', farmerrouter);
 
 

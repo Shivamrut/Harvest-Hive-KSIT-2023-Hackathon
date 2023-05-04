@@ -4,10 +4,14 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const config = require('config');
-const db = require('../db');
+// const db = require('../db');
+
+
+const farmerrouter = express.Router();
+farmerrouter.use(express.json());
 
 // Signup API
-router.post('/signup', async (req, res) => {
+farmerrouter.post('/signup', async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -39,7 +43,7 @@ router.post('/signup', async (req, res) => {
 });
 
 // Login API
-router.post('/login', async (req, res) => {
+farmerrouter.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -72,7 +76,7 @@ router.post('/login', async (req, res) => {
 
 
 // CREATE operation
-router.post('/', async (req, res) => {
+farmerrouter.post('/', async (req, res) => {
     const { name, email, password } = req.body;
     try {
       const [result] = await db.execute('INSERT INTO farmers (name, email, password) VALUES (?, ?, ?)', [name, email, password]);
@@ -85,10 +89,10 @@ router.post('/', async (req, res) => {
   });
   
   // READ operation
-  router.get('/:id', async (req, res) => {
+  farmerrouter.get('/:id', async (req, res) => {
     const farmerId = req.params.id;
     try {
-      const [rows] = await db.execute('SELECT * FROM farmers WHERE id = ?', [farmerId]);
+      const [rows] = await db.execute('SELECT * FROM farmers WHERE farmer_id = ?', [farmerId]);
       if (rows.length === 0) {
         res.status(404).send(`Farmer with id ${farmerId} not found`);
       } else {
@@ -102,7 +106,7 @@ router.post('/', async (req, res) => {
   });
   
   // UPDATE operation
-  router.put('/:id', async (req, res) => {
+  farmerrouter.put('/:id', async (req, res) => {
     const farmerId = req.params.id;
     const { name, email, password } = req.body;
     try {
@@ -119,7 +123,7 @@ router.post('/', async (req, res) => {
   });
   
   // DELETE operation
-  router.delete('/:id', async (req, res) => {
+  farmerrouter.delete('/:id', async (req, res) => {
     const farmerId = req.params.id;
     try {
       const [result] = await db.execute('DELETE FROM farmers WHERE id = ?', [farmerId]);
@@ -135,4 +139,4 @@ router.post('/', async (req, res) => {
   });
 
 
-module.exports = router;
+module.exports = farmerrouter;
