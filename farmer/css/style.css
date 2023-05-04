@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     box-sizing: border-box;
 }
@@ -158,4 +159,13 @@ section.graph {
         font-size: 14px;
         padding: 6px;
     }
+=======
+.goLeft
+{
+    position: relative;
+    left: 0px;
+    width: 300px;
+    
+    padding: 10px;
+>>>>>>> b60cf4c452046e1a2587bdb5c430fd7c11a17c88
 }
