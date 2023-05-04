@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mysql = require("mysql2/promise");
 const config = require("config");
-const db = require("../db");
+// const db = require("../db");
 // Create a MySQL connection pool
 const pool = mysql.createPool({
   host: config.get("db.host"),
@@ -15,8 +15,12 @@ const pool = mysql.createPool({
   charset: config.get("db.charset"),
 });
 
+
+const coustomerrouter = express.Router();
+coustomerrouter.use(express.json());
 // Signup API
-router.post("/signup", async (req, res) => {
+coustomerrouter.route("/signup")
+.post( async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
@@ -49,7 +53,7 @@ router.post("/signup", async (req, res) => {
 });
 
 // Login API
-router.post("/login", async (req, res) => {
+coustomerrouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -86,7 +90,7 @@ router.post("/login", async (req, res) => {
 
 // CRUD APIs
 // Get all customers
-router.get("/", async (req, res) => {
+coustomerrouter.get("/", async (req, res) => {
   try {
     const [rows, fields] = await pool.query("SELECT * FROM customers");
     res.json(rows);
@@ -99,7 +103,7 @@ router.get("/", async (req, res) => {
 
 
 // Create a new consumer
-router.post("/", async (req, res) => {
+coustomerrouter.post("/", async (req, res) => {
   try {
     const { name, email, phone } = req.body;
     const [result] = await db.execute(
@@ -114,7 +118,7 @@ router.post("/", async (req, res) => {
 });
 
 // Get all consumers
-router.get("/", async (req, res) => {
+coustomerrouter.get("/", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM consumers");
     res.json(rows);
@@ -125,7 +129,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get a single consumer
-router.get("/:id", async (req, res) => {
+coustomerrouter.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const [rows] = await db.execute(
@@ -144,7 +148,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Update a consumer
-router.put("/:id", async (req, res) => {
+coustomerrouter.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { name, email, phone } = req.body;
@@ -160,7 +164,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a consumer
-router.delete("/:id", async (req, res) => {
+coustomerrouter.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     await db.execute("DELETE FROM consumers WHERE id = ?", [id]);
@@ -171,5 +175,5 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = coustomerrouter;
 
