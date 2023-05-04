@@ -1,4 +1,5 @@
 # Harvest-Hive
+***
 The idea of the website is to provide a platform for farmers to get information on the crops they can grow based on the characteristics of their farm land. The website will use various technologies to provide this information, including machine learning algorithms to predict the crops that can grow in a specific area based on soil type, weather, and other factors.
 
 To use the website, farmers can sign up and create a profile, where they can enter information about their farm land, including the location, soil type, size, and other relevant details. The website will then use this information, along with weather data and other factors, to provide recommendations on the crops that can grow well in that area.
