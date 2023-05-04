@@ -117,4 +117,12 @@ padding: 5%;
     padding: 10px;
 }
 }
-  
+.goLeft
+{
+    position: relative;
+    left: 0px;
+    width: 300px;
+    
+    padding: 10px;
+}
+/* ####################################################################33 */

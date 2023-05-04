@@ -7,11 +7,11 @@ const texts = [
     "Welcome",
     "to",
     "Harvest-Hive",
-    "The",
-    "best",
-    "place",
-    "for",
-    "farmers"
+    // "The",
+    // "best",
+    // "place",
+    // "for",
+    // "farmers"
     
 ];
 
